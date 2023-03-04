@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+\usepackage{blindtext}
+\usepackage[en]{my-style}
+\usepackage{my-math}
+
+\title{My Document}
+\prof{Prof. Brown}
+\subtitle{LaTeX And Documents}
+\subject{Homework 1}
+\info{
+\begin{tabular}{lr}
+	&Vandad  Student number\\
+	&Github     \href{https://github.com/vandad1901/my-latex-style}{repository}\\
+\end{tabular}
+}
+\date{\today}
+%\usepackage{xepersian}
+%\settextfont{BZAR.TTF}
+\usepackage{my-code}
+    
+\begin{document}
+% \maketitlepage
+\maketitlestart
+\blindtext[1]
+\footnote{Footnote lol}
+\begin{qsolve}[My conclusion]
+	We see that $$2+2=4$$
+	\begin{qsolve}[]
+		Nested solution
+	\end{qsolve}
+    qsolve environments can be split
+    \splitqsolve
+    see??
+\end{qsolve}
+\vfil
+\begin{conclusion}
+	\blindtext
+\end{conclusion}
+
+\clearpage
+
+\section{Code snippet}
+% \begin{latin}
+\begin{codeblock}{python}
+class MyClass:
+def my_function():
+# my code
+\end{codeblock}
+% \end{latin}
+
+\clearpage
+\blinddocument
+\makeendpage
+\end{document}

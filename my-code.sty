@@ -1,0 +1,20 @@
+\usepackage{minted}
+\usepackage{tcolorbox}
+
+\usemintedstyle{nord}
+\tcbuselibrary{hooks, minted}
+
+\definecolor{nordBg}{HTML}{2E3440}
+\definecolor{nordLineNo}{HTML}{D8DEE9}
+
+
+\renewcommand{\theFancyVerbLine}{\ttfamily
+    \textcolor{nordLineNo}{\small{\arabic{FancyVerbLine}}}}
+    
+\newtcblisting{codeblock}[2][]{
+  minted options app={mathescape, linenos, fontsize=\footnotesize, numbersep=4pt},  
+  minted language=#2,
+  #1,
+  listing only,
+  colback=nordBg
+}
