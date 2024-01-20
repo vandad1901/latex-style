@@ -1,38 +1,20 @@
 \ProvidesPackage{my-environments}[2023/02/23 ...]
 
-\newenvironment{conclusion}{
-    \begin{center}
-        \rule{0.9\linewidth}{0.5pt}
-        \begin{abstract}}{
-        \end{abstract}
-        \rule{0.9\linewidth}{0.5pt}
-    \end{center}
+\newenvironment{conclusion}
+    {\begin{center} \rule{0.9\linewidth}{0.5pt} \begin{abstract}}
+    {\end{abstract} \rule{0.9\linewidth}{0.5pt} \end{center}
 }
 
-\newenvironment{qsolve}[1][\@defsolvetitle]{\begin{tcolorbox}[title=#1,
-            % colframe=blue!25,
-            % colback=blue!10,
-            % coltitle=blue!20!black,
-        ]}{\end{tcolorbox}}
+\newenvironment{qsolve}[1][\@defsolvetitle]
+    {\begin{tcolorbox}[title=#1, breakable, enhanced]}
+    {\end{tcolorbox}}
 
 \newcommand*{\splitqsolve}[1][]{
     \end{qsolve}
     #1
     \begin{qsolve}[]
-}% \newcommand{\FourQuads}[8]{
-%     \begin{tcbraster}[raster columns=2, raster rows=2, raster height=.65\textheight,
-%             enhanced, size=small, sharp corners, boxrule=0pt,
-%             % colbacktitle=structure.fg!20!bg,
-%             % coltitle=structure.fg,
-%             % colback=structure.fg!10!bg,
-%         ]
-%         \begin{tcolorbox}[title=#1]#2\end{tcolorbox}
-%         \begin{tcolorbox}[title=#3]#4\end{tcolorbox}
-%         \begin{tcolorbox}[title=#5]#6\end{tcolorbox}
-%         \begin{tcolorbox}[title=#7]#8\end{tcolorbox}
-%     \end{tcbraster}
-% }
-% \renewcommand{\listitemsymbol}{-~} % Changes the symbol used for lists
+}
+
 \newcommand*{\listitemsymbol}{\labelitemi~}
 % lengths
 \newlength{\quotewidth}
